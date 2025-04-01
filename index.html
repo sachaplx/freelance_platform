@@ -10,25 +10,54 @@
     <nav class="navbar" id="myNavbar">
         <a href="">FREELANCE</a>
     </nav>
-    <section class="card_container">
-        <article class="card" id="clickMissions">
-            <header class="card_header">
-                <h2>Missions</h2>
-                <p class="card_text">Liste des missions pour freelances</p>
-            </header>
-        </article>
-        <article class="card" id="clickPostuler">
-            <header class="card_header">
-                <h2>Postuler</h2>
-                <p class="card_text"></p>
-            </header>
-        </article>
-        <article class="card" id="clickDashboard">
-            <header class="card_header">
-                <h2>Dashboard</h2>
-                <p class="card_text">Tableau de bord des freelances</p>
-            </header>
-        </article>
+    <section class="card-container">
+        <div class="card" id="Missions">
+            <div class="card-flip">
+                <div class="card-front" id="cardFrontMissions">
+                    <h2>Missions</h2>
+                </div>
+                <div class="card-back" id="cardBackMissions">
+                    <h2>Test</h2>
+                    <p>test des missions</p>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="Postuler">
+            <div class="card-flip">
+                <div class="card-front" id="cardFrontPostuler">
+                    <h2>Postuler</h2>
+                </div>
+                <div class="card-back" id="cardBackPostuler">
+                    <h2>Postuler</h2>
+                    <div class="form-container">
+                    <p>Remplissez le formulaire ci-dessous :</p>
+                    <form class="form-content hidden">
+                        <label for="name">Nom :</label>
+                        <input type="text" placeholder="Nom" name="name" required>
+
+                        <label for="email">Email :</label>
+                        <input type="email" placeholder="Email" name="email" required>
+                                
+                        <label for="message">Message :</label>
+                        <textarea id="message" placeholder="Message" required></textarea>
+        
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="Dashboard">
+            <div class="card-flip">
+                <div class="card-front" id="cardFrontDashboard">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="card-back" id="cardBackDashboard">
+                    <h2>Test</h2>
+                    <p>test du dashboard</p>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>
