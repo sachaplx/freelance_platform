@@ -1,68 +1,35 @@
-[
+{
+  "missions": [
     {
-        "id": 1,
-        "title": "Création d'un site web vitrine",
-        "skills": "Front-end, designer",
-        "clients": "Boulangerie de la rue des pains",
-        "freelances": {
-            "id": "",
-            "name": "",
-            "skills": ""
-        }
+      "id": "1",
+      "title": "Création d'un site web vitrine",
+      "skills": "Front-end, designer",
+      "clients": "Boulangerie de la rue des pains",
+      "freelances": {
+        "id": "",
+        "name": "",
+        "skills": ""
+      }
     },
     {
-        "id": 2,
-        "title": "Création d'un ballon",
-        "skills": "gonflage",
-        "clients": "footballer",
-        "freelances": {
-            "id": "",
-            "name": "",
-            "skills": ""
-        }
+      "id": "2",
+      "title": "Réalisation d'une API Spring boot en JAVA",
+      "skills": "Back-end",
+      "clients": "Samsung"
     },
     {
-        "id": 3,
-        "title": "Création d'un ballon",
-        "skills": "gonflage",
-        "clients": "footballer",
-        "freelances": {
-            "id": "",
-            "name": "",
-            "skills": ""
-        }
-    },
-    {
-        "id": 4,
-        "title": "Création d'un ballon",
-        "skills": "gonflage",
-        "clients": "footballer",
-        "freelances": {
-            "id": "",
-            "name": "",
-            "skills": ""
-        }
-    },
-    {
-        "id": 5,
-        "title": "Création d'un ballon",
-        "skills": "gonflage",
-        "clients": "footballer",
-        "freelances": {
-            "id": "",
-            "name": "",
-            "skills": ""
-        }
-    },
-    {
-        "id": 6,
-        "title": "Création d'un ballon",
-        "skills": "gonflage",
-        "clients": "footballer",
-        "freelances": {
-            "id": "",
-            "name": "",
-            "skills": ""
-        }
+      "id": "3",
+      "title": "Administration base de données",
+      "skills": "MySQL, MongoDB",
+      "clients": "Magasin de vêtements"
     }
-]
+  ],
+  "candidatures": [
+    {
+      "id": "3b9c",
+      "name": "plxaq",
+      "email": "sacha.plexoste@gmail.com",
+      "missionID": "3"
+    }
+  ]
+}

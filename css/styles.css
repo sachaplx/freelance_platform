@@ -160,7 +160,7 @@ body {
     display: flex;
 }
 
-.form-content input, .form-content textarea {
+.form-content input, .form-content select{
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -168,6 +168,15 @@ body {
 }
 
 .form-content button {
+    background-color: #333;
+    color: #00a2bc;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.card-back button {
     background-color: #333;
     color: #00a2bc;
     padding: 10px;
