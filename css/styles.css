@@ -58,12 +58,14 @@ body {
     perspective: 1000px;
     display: flex;
     position: relative;
-    transition: height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out margin 0.3s ease-in-out;
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-start;
     box-sizing: border-box;
     border-radius: 5px;
+    margin-bottom: 1rem;
+    color: #003252;
 }
 
 .card-flip {
@@ -94,12 +96,12 @@ body {
 
 .card-front {
     background-color: #f1f1f1;
-    color: black;
+    color: #003252;
 }
 
 .card-back {
     background-color: #f1f1f1;
-    color: black;
+    color: #003252;
     transform: rotateY(180deg);
     padding: 20px;
     overflow: hidden;
@@ -121,7 +123,7 @@ body {
 
 .card h2 {
     font-size: 1.5rem;
-    color: black;
+    color: #003252;
     font-weight: bold;
 }
 
@@ -171,6 +173,7 @@ body {
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
+    border: none;
 }
 
 .form-content button:hover {
@@ -186,14 +189,28 @@ body {
     opacity: 0;
 }
 
+#cardBackMissions h3 {
+    color: #003252;
+}
+
+#cardBackMissions li {
+    color: #003252;
+}
+
+#cardBackMissions li:hover {
+    color: #00a2bc;
+}
+
 @media screen and (max-width: 768px) {
     .card {
         width: 90%;
+        margin-bottom: 2rem;
     }
 }
 
 @media screen and (max-width: 500px) {
     .card {
         width: 85%;
+        margin-bottom: 2rem;
     }
 }
