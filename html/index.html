@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance platform</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav class="navbar" id="myNavbar">
+        <a href="">FREELANCE</a>
+    </nav>
+    <section class="card-container">
+        <div class="card" id="Missions">
+            <div class="card-flip">
+                <div class="card-front" id="cardFrontMissions">
+                    <h2>MISSIONS</h2>
+                </div>
+                <div class="card-back" id="cardBackMissions">
+                    <!--Missions list will appear here-->
+                </div>
+            </div>
+        </div>
+        <div class="card" id="Postuler">
+            <div class="card-flip">
+                <div class="card-front" id="cardFrontPostuler">
+                    <h2>POSTULER</h2>
+                </div>
+                <div class="card-back" id="cardBackPostuler">
+                    <h2>Postuler</h2>
+                    <div class="form-container">
+                    <p>Remplissez le formulaire ci-dessous :</p>
+                    <form class="form-content hidden">
+                        <label for="name">Nom :</label>
+                        <input type="text" placeholder="Nom" id="name" required>
+
+                        <label for="email">Email :</label>
+                        <input type="email" placeholder="Email" id="email" required>
+                                
+                        <label for="missionID">ID de mission :</label>
+                        <input type="number" placeholder="ID" id="missionID" required></input>
+        
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="Dashboard">
+            <div class="card-flip">
+                <div class="card-front" id="cardFrontDashboard">
+                    <h2>DASHBOARD</h2>
+                </div>
+                <div class="card-back" id="cardBackDashboard">
+                    <h2>Test</h2>
+                    <p>test du dashboard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>
