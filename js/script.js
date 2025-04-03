@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.card');
     const cardContainers = document.querySelector('.card-container');
     const forms = document.querySelectorAll('.form-content');
-    fetch('data/missions.json' , {
+    fetch('/data/missions.json' , {
         method: 'GET'
     }).then(response => response.json()).then(data => {
         console.log(data);
