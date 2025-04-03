@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const forms = document.querySelectorAll(".form-content");
   const freelanceForm = document.getElementById("freelanceForm");
-
+  // GET request to fetch all missions in JSON
   fetch("http://localhost:2777/missions")
     .then((response) => response.json())
     .then((data) => {
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Show missions on the back of the Missions card
   function populateMissions(data) {
     const cardBackMissions = document.querySelector("#cardBackMissions"); // Get the back of the "missions" card
 
@@ -108,10 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
     adjustCardHeight(cardBackMissions);
   }
 
-  // Load candidatures
+  // Load candidatures on back of the dashboard card
   function loadCandidatures() {
     const cardBackDashboard = document.querySelector("#cardBackDashboard");
 
+    // Same logic as populateMissions() function
     cardBackDashboard.innerHTML = "";
 
     const title = document.createElement("h3");
@@ -120,17 +122,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const dashboardList = document.createElement("ul");
 
+    // GET request to fetch candidatures from JSON
     fetch("http://localhost:2777/candidatures")
       .then((response) => response.json())
       .then((candidatures) => {
+        // Loop through the data and create a list item for each mission
         candidatures.forEach((candidature) => {
           const dashboardItem = document.createElement("li");
           dashboardItem.innerHTML = `<strong>${candidature.name}</strong>`;
 
-
+          // GET request to fetch mission data based on missionID from candidature
           fetch(`http://localhost:2777/missions/${candidature.missionID}`)
             .then((response) => response.json())
             .then((mission) => {
+              // Create a list with Name and title of mission and a delete button
               const missionData = document.createElement("li");
               missionData.innerHTML = `${mission.title}`;
               dashboardList.appendChild(dashboardItem);
@@ -138,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
               const delLign = document.createElement("li");
               const delButton = document.createElement("button");
               delButton.textContent = "Supprimer";
+              // Prevent the click from flipping the card instead of clicking the button
               delButton.addEventListener('click', function(event) {
                 event.stopPropagation();
                 deleteCandidature(candidature.id);
@@ -156,15 +162,18 @@ document.addEventListener("DOMContentLoaded", function () {
       adjustCardHeight(cardBackDashboard);
   }
 
+  // DELETE request to remove candidature in JSON
   function deleteCandidature(id) {
     fetch(`http://localhost:2777/candidatures/${id}`, {
         method: 'DELETE',
     }).then(() => {
       alert("Candidature supprimée");
       loadCandidatures();
+      window.location.reload();
     }).catch(error => console.error("Erreur lors de la suppression:", error));
   }
 
+  // Adding eventListener to submit candidature
   freelanceForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -178,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
       missionID: missionID,
     };
 
-    // This would be the way to handle POST request but browsers cannot write on local files.
+    // POST request to write data in JSON
     if (candidature.missionID) {
       fetch("http://localhost:2777/candidatures", {
         method: "POST",
@@ -191,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data) => {
           console.log("Success:", data);
           alert("Votre candidature a bien été enregistrée!");
+          window.location.reload();
         })
         .catch((error) => {
           console.log("Error:", error);
@@ -201,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Loop to prevent clicking near the form flipping the card
   cards.forEach((card) => {
     card.addEventListener("click", function (event) {
       if (!event.target.closest(".form-content")) {
@@ -209,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Making the design responsive
   window.addEventListener("resize", function () {
     cards.forEach((card) => {
       adjustCardHeight(card);
