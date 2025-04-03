@@ -1,0 +1,216 @@
+/*Resetting global style*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Century Gothic;
+    line-height: 1.6;
+    text-align: center;
+    /*Background from svgbackgrounds.com*/
+    background-color: #003252;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23003252' cx='50' cy='0' r='50'/%3E%3Cg fill='%23003758' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23003c5d' cx='50' cy='100' r='50'/%3E%3Cg fill='%23004163' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23004669' cx='50' cy='200' r='50'/%3E%3Cg fill='%23004c6e' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23005174' cx='50' cy='300' r='50'/%3E%3Cg fill='%23005779' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23005c7f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23006284' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%2300678a' cx='50' cy='500' r='50'/%3E%3Cg fill='%23006d8f' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23007394' cx='50' cy='600' r='50'/%3E%3Cg fill='%2300789a' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23007e9f' cx='50' cy='700' r='50'/%3E%3Cg fill='%230084a4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23008aa9' cx='50' cy='800' r='50'/%3E%3Cg fill='%230090ae' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%230096b3' cx='50' cy='900' r='50'/%3E%3Cg fill='%23009cb7' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%2300A2BC' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;   
+}
+
+.navbar a {
+    float: none;
+    display: block;
+    color: #00a2bc;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #00a2bc;
+    color: #003252;
+    font-weight: bolder;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    transition: opacity 0.3s ease-out;
+}
+
+.card {
+    background-color: transparent;
+    width: 30%;
+    min-height: 200px;
+    border: 1px solid transparent;
+    perspective: 1000px;
+    display: flex;
+    position: relative;
+    transition: height 0.5s ease-in-out margin 0.3s ease-in-out;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    color: #003252;
+}
+
+.card-flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.hidden {
+    display: none;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.card-front {
+    background-color: #f1f1f1;
+    color: #003252;
+}
+
+.card-back {
+    background-color: #f1f1f1;
+    color: #003252;
+    transform: rotateY(180deg);
+    padding: 20px;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0.6s, opacity 0.6s ease-out;
+    box-sizing: border-box;
+}
+
+.card.flipped {
+    height: auto;
+}
+
+.card.flipped .card-back {
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: #003252;
+    font-weight: bold;
+}
+
+.card.flipped .card-flip {
+    transform: rotateY(180deg);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card.flipped .form-container {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.form-content {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.card.flipped .form-content {
+    display: flex;
+}
+
+.form-content input, .form-content textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-content button {
+    background-color: #333;
+    color: #00a2bc;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.form-content button:hover {
+    background-color: #555;
+}
+
+.confirmation-message {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.confirmation-message.fade-out {
+    opacity: 0;
+}
+
+#cardBackMissions h3 {
+    color: #003252;
+}
+
+#cardBackMissions li {
+    color: #003252;
+}
+
+#cardBackMissions li:hover {
+    color: #00a2bc;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 85%;
+        margin-bottom: 2rem;
+    }
+}
